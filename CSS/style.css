@@ -1,0 +1,57 @@
+nav li {
+    margin: 0 15px;
+    font-size: x-large;
+}
+
+footer .row {
+    font-size: medium;
+    color: white;
+}
+
+footer iframe {
+    border-radius: 20px;
+    width: 80%;
+    height: 60%;
+}
+
+#card img {
+    border-radius: 30px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -0%);
+}
+
+#card {
+    border: 0px;
+    font-size: larger;
+    color: rgb(223, 222, 222);
+    text-shadow:
+        -1px -1px 0 black,
+        /* 上左 */
+        1px -1px 0 black,
+        /* 上右 */
+        -1px 1px 0 black,
+        /* 下左 */
+        1px 1px 0 black;
+        /* 下右 */
+}
+#video iframe
+{
+    border: none;
+    border-radius: 30px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -0%);
+}
+#product
+{
+    background-color: rgb(245, 224, 139);
+    height: 50px;
+    text-align: center;
+    font-size: x-large;
+}
+#bao img
+{
+    border: none;
+    border-radius: 20px;
+}
