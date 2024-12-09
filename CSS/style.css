@@ -39,6 +39,9 @@ footer iframe {
         1px 1px 0 black;
         /* 下右 */
 }
+#video{
+    margin-bottom: 50px;
+}
 #video iframe{
     border: none;
     border-radius: 30px;
@@ -96,7 +99,7 @@ body.showCart .cartTab{
     inset: 0 0 0 auto;
 }
 body.showCart .container{
-    transform: translateX(-250px);
+    transform: translateX(-400px);
 }
 .cartTab h1{
     padding: 20px;
