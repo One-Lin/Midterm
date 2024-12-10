@@ -158,6 +158,7 @@ footer iframe {
     transition: transform .5s;
 }
 .cartTab{
+    padding-top: 70px;
     width: 400PX;
     background-color: #2f2b2b;
     color: #eee;
@@ -168,7 +169,7 @@ footer iframe {
     display: grid;
     grid-template-rows:  70px 1fr 70px;
     transition: .5s;
-    z-index: 1000;
+    z-index: top;
 }
 .showCart .cartTab{
     inset: 0 0 0 auto;
@@ -194,7 +195,7 @@ footer iframe {
     cursor: pointer;
 }
 .cartTab .btnCart .close{
-    background-color:rgb(80, 17, 3);
+    background-color:rgb(0, 0, 0);
     color: white;
 }
 .cartTab .listCart .item img{
