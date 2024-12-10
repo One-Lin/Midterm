@@ -1,0 +1,225 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+body{
+  font-family: 'Noto Sans TC',sans-serif !important;
+  background-image:url("/bg2.jpg");
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+/* 導航列 */
+nav li {
+    margin: 0 15px;
+    font-size: x-large;
+}
+.cartIcon{
+    margin-top: 5px;
+    position: absolute;
+    right: 10px;
+}
+.cartIcon button{
+    border: none;
+    color: white;
+    background-color: transparent;
+    font-size: x-large;
+}
+/* ↑ */
+
+/* 首頁intro圖片css */
+#introImg{
+    border-radius: 30px;
+    position: relative;
+    left: 20%;
+}
+.card-text{
+    font-size: xx-large;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+}
+.btn{
+    font-size: larger;
+    border-radius: 10px;
+    background-color: #010101;
+    color: white;
+}
+/* 滑鼠移動放大位置 */
+.priceImg img{
+    transform:scale(1,1);
+    transition: all 0.25s ease-out;
+    transform-origin: 800px -200px;
+    position: relative;
+    z-index: 1000;
+}
+/* 滑鼠移動放大倍率 */
+.priceImg img:hover{transform:scale(1.5,1.5);} /* 滑鼠移動放大 */
+/* ↑ */
+
+/* 頁尾css */
+footer .row {
+    font-size: medium;
+    color: white;
+}
+footer iframe {
+    border-radius: 20px;
+    width: 80%;
+    height: 60%;
+}
+/* ↑ */
+
+/* 商品頁分類標籤css */
+.container .product{
+    text-align: center;
+    display: flex;
+}
+.container .product div{
+    flex-grow: 1;
+}
+.container .product div button{
+    font-weight: 600;
+    text-shadow: 1px 1px 1px white;
+    width: 80%;
+    font-size:xx-large ;
+    border: none;
+    border-radius: 30px;
+    background-color: silver;
+    color: black;
+}
+/* ↑ */
+
+/* 商品css樣式 */
+.listProduct .total .item .price{
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: larger;   
+}
+.listProduct .total .item .addCart{
+    border: none;
+    background-color: #2f2b2b;
+    color: #ffffff;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+.listProduct .total .item{
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+    letter-spacing: 3px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #f5ece0;
+}
+.listProduct .total .item img {
+    flex-grow: 1;
+    margin-top: 10px;
+    border-radius: 30px;
+    width: 90%;
+    filter: drop-shadow(0 10px 20px rgb(83, 83, 83));
+}
+.listProduct .total{
+    display: flex ;
+    flex-wrap: wrap;
+    gap: 30px ;
+    margin: 25px;
+}
+/* ↑ */
+
+/* 首頁iframe css樣式 */
+#video{
+    margin-bottom: 50px;
+}
+#video iframe{
+    border: none;
+    border-radius: 30px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -0%);
+}
+/* ↑ */
+
+#product{
+    background-color: rgb(245, 224, 139);
+    height: 50px;
+    text-align: center;
+    font-size: x-large;
+}
+.container{
+    transition: transform .5s;
+}
+.cartTab{
+    width: 400PX;
+    background-color: #2f2b2b;
+    color: #eee;
+    position: fixed;
+    top: 0px;
+    right: -400px;
+    bottom: 0px;
+    display: grid;
+    grid-template-rows:  70px 1fr 70px;
+    transition: .5s;
+    z-index: 1000;
+}
+.showCart .cartTab{
+    inset: 0 0 0 auto;
+}
+.showCart .container{
+    transform: translateX(-200px);
+}
+.cartTab h1{
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+    text-align: center;
+}
+.cartTab .btnCart{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.cartTab .btnCart button{
+    color:black;
+    background-color:  #f5ece0;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cartTab .btnCart .close{
+    background-color:rgb(80, 17, 3);
+    color: white;
+}
+.cartTab .listCart .item img{
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100%;
+    border-radius: 20px;
+} 
+.cartTab .listCart .item{
+    display: grid;
+    grid-template-columns: 70px 150px 50px 1fr;
+    gap: 10px   ;
+    text-align: center;
+    align-items: center;
+}
+.listCart .quantity span{
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #010101;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.listCart .quantity span:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+}
+.listCart .item:nth-child(even){
+    background-color: rgb(76, 72, 65);
+}
+.listCart{
+    overflow: auto;
+}
+.listCart::-webkit-scrollbar{
+    width: 0;
+}

@@ -15,6 +15,7 @@ closeCart.addEventListener('click',()=>{
     body.classList.toggle('showCart')
 })
 
+// 把資料放進分頁裡
 const addDataToHTML = () => {
     listProductHTML.innerHTML = '';
     if(listProducts.length > 0){
@@ -45,6 +46,7 @@ listProductHTML.addEventListener('click',(event)=>{
     }
 })
 
+// 加入購物車
 const addToCart = (product_id)=>{
     let positionThisProductInCart = carts.findIndex((value) => value.product_id == product_id);
     if (carts.length <= 0){
