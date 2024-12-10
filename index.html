@@ -15,9 +15,9 @@
     <link rel="icon" href="/favicon.ico">
 </head>
 
-<body class="" style="background-image: url(./bg2.jpg);background-repeat: no-repeat;background-size:cover;">
+<body class="" style="background-image: url(./bg2.jpg);background-repeat: no-repeat;background-size:cover;padding-top: 70px;">
     <!-- Navgation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(80, 17, 3) ;">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgb(80, 17, 3) ;">
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">
                 <img src="./logo2.png" class="transparent-image" style="height: 50px;">
@@ -66,16 +66,20 @@
     <!-- intro -->
     <div class="container">
         <div class="row" id="card">
-            <div class="card pt-4" style="width: 50%;border: 0px;;background-color: transparent;">
-                <img src="./baoZi.jpg" class="card-img-top" alt="..." style="width: 60%;">
+            <div class="card mt-4" style="width: 50%;border: none;background-color: transparent;">
+                <img id="introImg" src="/image/baoZi.jpg" class="card-img-top" alt="" style="width: 60%";>
                 <div class="card-body" style="text-align: center;">
-                    <h3 class="card-title"><b>今天想來點包子嗎?</b></h3>
-                    <p class="card-text">高雄在地美味任君挑選</p>
+                    <h2 class="card-title" style="color: rgb(244, 247, 255);text-shadow: 3px 3px 3px black;">
+                        <b>今天想來點包子嗎?</b>
+                    </h2>
+                    <h5 class="card-text">高雄在地美味任君挑選</h5>
                     <a href="/item.html" class="btn btn-dark">挑你想吃</a>
                 </div>
             </div>
-            <div class="card pt-4" style="width: 50%;border: 0px;;background-color: transparent;">
-                <img src="./price.jpg" class="card-img-top" alt="...">
+            <div class="card mt-4" style="width: 50%;border: 0px;;background-color: transparent;">
+                <div class="priceImg">
+                    <img src="./price.jpg" class="card-img-top" alt="...">
+                </div>
                 <div class="card-body">
                     <h3 class="card-text" style="text-align: center;"><b>最新價目表</b></h3>
                 </div>
@@ -83,7 +87,7 @@
         </div>
     </div>
     <!-- video -->
-    <div class="container">
+    <div class="container mt-4">
         <div class="row" id="video">
             <div class="col-6">
                 <iframe
@@ -107,19 +111,7 @@
     <!-- cartTab -->
     <div class="cartTab">
         <h1>購物車</h1>
-        <div class="listCart">
-            <div class="item">
-                <div class="image">
-                    <img src="/meat.jpg" alt="">
-                </div>
-                <div class="name">名字</div>
-                <div class="totalPrice">$200</div>
-                <div class="quantity">
-                    <span class="minus"><</span>
-                    <span>1</span>
-                    <span class="plus">></span>
-                </div>
-            </div>
+        <div class="listCart">       
         </div>
         <div class="btn">
             <button class="close">關閉</button>

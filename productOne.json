@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "鮮肉包",
+        "price": 19,
+        "image": "image/meat2.png"
+    },
+    {
+        "id": 2,
+        "name": "香菇蛋黃包",
+        "price": 27,
+        "image": "image/Egg2.png"
+    },
+    {
+        "id": 3,
+        "name": "黑胡椒洋蔥肉包",
+        "price": 33,
+        "image": "image/blackPapper2.png"
+    },
+    {
+        "id": 4,
+        "name": "澳洲鮑魚肉包",
+        "price": 110,
+        "image": "image/baoYu2.png"
+    },
+    {
+        "id": 5,
+        "name": "櫻花蝦干貝肉包",
+        "price": 40,
+        "image": "image/sakura2.png"
+    },
+    {
+        "id": 6,
+        "name": "干貝麻辣肉包",
+        "price": 40,
+        "image": "image/spicy2.png"
+    },
+    {
+        "id": 7,
+        "name": "黃金起司肉包",
+        "price": 40,
+        "image": "image/cheese2.png"
+    },
+    {
+        "id": 8,
+        "name": "全麥脆筍肉包",
+        "price": 23,
+        "image": "image/mia2.png"
+    }
+]
