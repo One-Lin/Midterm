@@ -21,6 +21,15 @@ nav li {
     background-color: transparent;
     font-size: x-large;
 }
+.contactLink{
+    margin-top: 8px;
+}
+.contactLink button{
+    border: none;
+    color: white;
+    background-color: transparent;
+    font-size: x-large;
+}
 /* ↑ */
 
 /* 首頁intro圖片css */
@@ -222,4 +231,22 @@ footer iframe {
 }
 .listCart::-webkit-scrollbar{
     width: 0;
+}
+
+/* 聯絡我們 */
+.contact{
+    width: 600PX;
+    height: 800px;
+    background-color: #2f2b2b;
+    color: #000000;
+    position: absolute;
+    top: -200;    
+    transition: 0.5s;
+    z-index: 1000;
+}
+.showContact .contact{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
