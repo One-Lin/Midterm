@@ -1,0 +1,25 @@
+.shop img {
+    width: 100%;
+    border-radius: 40px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.introduce1 {
+    width: 40%;
+    background-color: rgb(185, 184, 184);
+}
+
+.row {
+    font-size: large;
+}
+.introduceTitle{
+    text-align: center;
+}
+.introduceText{
+    font-weight: 400;
+    text-align: justify;
+}
