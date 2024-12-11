@@ -30,22 +30,22 @@
 /* ---------------↑--------------- */
 
 /* ---------------商品css樣式--------------- */
-.listProduct .total .item .price{
+.price{
     margin-bottom: 10px;
     font-weight: 700;
     font-size: larger;   
 }
-.listProduct .total .item .addCart{
+.addCart{
+    width: 100%;
     border: none;
     background-color: #2f2b2b;
     color: #ffffff;
     border-radius: 20px;
-    margin: 5px;
     padding: 10px;
     letter-spacing: 2px;
     cursor: pointer;
 }
-.listProduct .total .item .addCart:hover{
+.addCart:hover{
     border: none;
     background-color: #2f2b2b;
     color: #ffffff;
@@ -54,7 +54,7 @@
     letter-spacing: 2px;
     transition: .25s;
 }
-.listProduct .total .item{
+.item{
     /* display: flex;
     flex-direction: column; */
     width: 22%;
@@ -66,18 +66,27 @@
     background-color: #f5ece0;
 }
 
-.listProduct .total .item img {
+.item img {
     margin-top: 10px;
     border-radius: 30px;
     width: 90%;
     filter: drop-shadow(0 10px 20px rgb(83, 83, 83));
 }
-.listProduct .total{
+.total{
     display: flex ;
     flex-wrap: wrap;
     gap: 30px ;
     margin: 25px;
     padding-left: 2%;
+}
+.productContent{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.productContent img{
+    flex-grow: 1;
 }
 /* ---------------↑--------------- */
 

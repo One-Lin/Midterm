@@ -1,10 +1,21 @@
 @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+html{
+    height: 100%;
+    margin: 0;
+}
 body{
   font-family: 'Noto Sans TC',sans-serif !important;
   background-image:url("/bg2.jpg");
   background-repeat: no-repeat;
   background-size:cover;
   background-attachment: fixed;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main{
+    flex-grow: 1;
 }
 /* ---------------導航列--------------- */
 nav li {
@@ -53,11 +64,14 @@ footer iframe {
 .container{
     transition: transform .5s;
 }
+.container-lg{
+    transition: transform .5s;
+}
 /* ---------------↑--------------- */
 
 /* ---------------購物車內容--------------- */
 .cartTab{
-    padding-top: 70px;
+    padding-top: 100px;
     width: 400PX;
     background-color: #2f2b2b;
     color: #eee;
@@ -74,11 +88,12 @@ footer iframe {
     inset: 0 0 0 auto;
 }
 .showCart .container{
-    transform: translateX(-200px);
+    transform: translateX(-400px);
+}
+.showCart .container-lg{
+    transform: translateX(-400px);
 }
 .cartTab h1{
-    padding: 20px;
-    margin: 0;
     font-weight: 300;
     text-align: center;
 }

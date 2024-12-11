@@ -16,226 +16,258 @@
 </head>
 
 <body class="">
-    <!-- Navgation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgb(80, 17, 3) ;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">
-                <img src="./logo2.png" class="transparent-image" style="height: 50px;">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.html">
-                            首頁
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/itemV2.html" aria-current="page" style="color: white;">
-                            販賣項目
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/aboutUs.html" aria-current="page" style="color: white;">
-                            關於本店
-                        </a>
-                    </li>
-                    <li class="nav-item contactLink">
-                        <a class="nav-link active" onclick="showContact()" href="#" aria-current="page"
-                            style="color: white;">
-                            聯絡我們
-                        </a>
-                    </li>
-                    <li class="nav-item cartIcon">
-                        <a class="nav-link active bi bi-cart4" onclick="showCart()" href="#" aria-current="page"
-                            style="color: white;">
-                            結帳
-                        </a>
-                    </li>
+    <div class="main">
+        <!-- Navgation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark sticky-top" style="background-color: rgb(80, 17, 3) ;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="./logo2.png" class="transparent-image" style="height: 50px;">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">
+                                首頁
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/itemV2.html" aria-current="page" style="color: white;">
+                                販賣項目
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/aboutUs.html" aria-current="page" style="color: white;">
+                                關於本店
+                            </a>
+                        </li>
+                        <li class="nav-item contactLink">
+                            <a class="nav-link active" onclick="showContact()" href="#" aria-current="page"
+                                style="color: white;">
+                                聯絡我們
+                            </a>
+                        </li>
+                        <li class="nav-item cartIcon">
+                            <a class="nav-link active bi bi-cart4" onclick="showCart()" href="#" aria-current="page"
+                                style="color: white;">
+                                結帳
+                            </a>
+                        </li>
+                </div>
+            </div>
+        </nav>
+        <!-- 商品類別 -->
+        <div class="container pt-5">
+            <div class="product">
+                <div>
+                    <button onclick="showAll()">全部商品</button>
+                </div>
+                <div>
+                    <button onclick="show('baozi')">包子區</button>
+                </div>
+                <div>
+                    <button onclick="show('manto')">饅頭區</button>
+                </div>
+                <div>
+                    <button onclick="show('drink')">飲料區</button>
+                </div>
             </div>
         </div>
-    </nav>
-    <!-- 商品類別 -->
-    <div class="container pt-5">
-        <div class="product">
-            <div>
-                <button onclick="showAll()">全部商品</button>
-            </div>
-            <div>
-                <button onclick="show('baozi')">包子區</button>
-            </div>
-            <div>
-                <button onclick="show('manto')">饅頭區</button>
-            </div>
-            <div>
-                <button onclick="show('drink')">飲料區</button>
-            </div>
-        </div>
-    </div>
-    <!-- 商品 -->
-    <div class="container-lg mt-4">
-        <div class="listProduct">
-            <div class="total">
-                <!-- 包子 -->
-                <div class="item baozi">
-                    <div class="productContent">
-                        <img src="/image/meat2.png" alt="">
-                        <h2>鮮肉包</h2>
-                        <div class="price">NT$19</div>
-                        <button class="addCart">加入購物車</button>
+        <!-- 商品 -->
+        <div class="container-lg mt-4">
+            <div class="listProduct">
+                <div class="total">
+                    <!-- 包子 -->
+                    <div class="item baozi">
+                        <div class="productContent">
+                            <img src="/image/meat2.png" alt="">
+                            <h2>鮮肉包</h2>
+                            <div class="price">NT$19</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item baozi">
+                        <div class="productContent">
+                            <img src="/image/Egg2.png" alt="">
+                            <h2>香菇蛋黃肉包</h2>
+                            <div class="price">NT$27</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item baozi">
+                        <div class="productContent">
+                            <img src="/image/blackPapper2.png" alt="">
+                            <h2>黑胡椒洋蔥肉包</h2>
+                            <div class="price">NT$33</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item baozi">
+                        <div class="productContent">
+                            <img src="/image/baoYu2.png" alt="">
+                            <h2>澳洲鮑魚肉包</h2>
+                            <div class="price">NT$110</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item baozi">
+                        <div class="productContent">
+                            <img src="/image/sakura2.png" alt="">
+                            <h2>櫻花蝦干貝肉包</h2>
+                            <div class="price">NT$40</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item baozi">
+                        <div class="productContent">
+                            <img src="/image/spicy2.png" alt="">
+                            <h2>干貝麻辣肉包</h2>
+                            <div class="price">NT$40</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item baozi">
+                        <div class="productContent">
+                            <img src="/image/cheese2.png" alt="">
+                            <h2>黃金起司肉包</h2>
+                            <div class="price">NT$40</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item baozi">
+                        <div class="productContent">
+                            <img src="/image/mia2.png" alt="">
+                            <h2>全麥脆筍肉包</h2>
+                            <div class="price">NT$23</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item baozi">
+                        <div class="productContent">
+                            <img src="/image/blacksugar2.png" alt="">
+                            <h2>黑糖爆漿包</h2>
+                            <div class="price">NT$22</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <!-- 饅頭 -->
+                    <div class="item manto">
+                        <div class="productContent">
+                            <img src="/image/milk2.png" alt="">
+                            <h2>鮮奶饅頭</h2>
+                            <div class="price">NT$12</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item manto">
+                        <div class="productContent">
+                            <img src="/image/blackSugarManto2.png" alt="">
+                            <h2>黑糖饅頭</h2>
+                            <div class="price">NT$12</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item manto">
+                        <div class="productContent">
+                            <img src="/image/sandon2.png" alt="">
+                            <h2>山東饅頭</h2>
+                            <div class="price">NT$13</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item manto">
+                        <div class="productContent">
+                            <img src="/image/bsgManto2.png" alt="">
+                            <h2>黑糖全麥饅頭</h2>
+                            <div class="price">NT$22</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item manto">
+                        <div class="productContent">
+                            <img src="/image/gManto2.png" alt="">
+                            <h2>全麥饅頭</h2>
+                            <div class="price">NT$22</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <!-- 飲料 -->
+                    <div class="item drink">
+                        <div class="productContent">
+                            <img src="/image/coffeeMilk2.png" alt="">
+                            <h2>咖啡牛奶</h2>
+                            <div class="price">NT$15</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item drink">
+                        <div class="productContent">
+                            <img src="/image/milkTea2.png" alt="">
+                            <h2>鮮奶茶</h2>
+                            <div class="price">NT$35</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
+                    </div>
+                    <div class="item drink">
+                        <div class="productContent">
+                            <img src="/image/soyBeanMilk2.png" alt="">
+                            <h2>豆漿</h2>
+                            <div class="price">NT$15</div>
+                            <button class="addCart">加入購物車</button>
+                        </div>
                     </div>
                 </div>
-                <div class="item baozi">
-                    <div class="productContent">
-                        <img src="/image/Egg2.png" alt="">
-                        <h2>香菇蛋黃肉包</h2>
-                        <div class="price">NT$27</div>
-                        <button class="addCart">加入購物車</button>
-                    </div>
+            </div>
+        </div>
+        <!-- 聯絡我們 -->
+        <div class="contact" id="contactBlock">
+            <div class="contactInfo">
+                <div class="contactTitle">
+                    <h2>聯絡我們</h2>
+                    <h4>contact us</h4>
                 </div>
-                <div class="item baozi">
-                    <img src="/image/blackPapper2.png" alt="">
-                    <h2>黑胡椒洋蔥肉包</h2>
-                    <div class="price">NT$33</div>
-                    <button class="addCart">加入購物車</button>
+                <div class="contactContent">
+                    若有任何需要服務的地方，請填寫以下表單表達您的意見，我們將收到您的來信後，儘速於3～5日內回覆（不含週六例假日）。
                 </div>
-                <div class="item baozi">
-                    <img src="/image/baoYu2.png" alt="">
-                    <h2>澳洲鮑魚肉包</h2>
-                    <div class="price">NT$110</div>
-                    <button class="addCart">加入購物車</button>
+                <div class="input-group mb-3 px-2">
+                    <span class="input-group-text" id="basic-addon1">*姓名</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                        aria-describedby="basic-addon1">
                 </div>
-                <div class="item baozi">
-                    <img src="/image/sakura2.png" alt="">
-                    <h2>櫻花蝦干貝肉包</h2>
-                    <div class="price">NT$40</div>
-                    <button class="addCart">加入購物車</button>
+                <div class="input-group mb-3 px-2">
+                    <span class="input-group-text" id="basic-addon1">*連絡電話</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                        aria-describedby="basic-addon1">
                 </div>
-                <div class="item baozi">
-                    <img src="/image/spicy2.png" alt="">
-                    <h2>干貝麻辣肉包</h2>
-                    <div class="price">NT$40</div>
-                    <button class="addCart">加入購物車</button>
+                <div class="input-group mb-3 px-2">
+                    <span class="input-group-text" id="basic-addon1">*信箱</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                        aria-describedby="basic-addon1">
                 </div>
-                <div class="item baozi">
-                    <img src="/image/cheese2.png" alt="">
-                    <h2>黃金起司肉包</h2>
-                    <div class="price">NT$40</div>
-                    <button class="addCart">加入購物車</button>
+                <div class="input-group mb-3 px-2">
+                    <span class="input-group-text" id="basic-addon1">*意見</span>
+                    <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                        aria-describedby="basic-addon1">
                 </div>
-                <div class="item baozi">
-                    <img src="/image/mia2.png" alt="">
-                    <h2>全麥脆筍肉包</h2>
-                    <div class="price">NT$23</div>
-                    <button class="addCart">加入購物車</button>
-                </div>
-                <div class="item baozi">
-                    <img src="/image/blacksugar2.png" alt="">
-                    <h2>黑糖爆漿包</h2>
-                    <div class="price">NT$22</div>
-                    <button class="addCart">加入購物車</button>
-                </div>
-                <!-- 饅頭 -->
-                <div class="item manto">
-                    <img src="/image/milk2.png" alt="">
-                    <h2>鮮奶饅頭</h2>
-                    <div class="price">NT$12</div>
-                    <button class="addCart">加入購物車</button>
-                </div>
-                <div class="item manto">
-                    <img src="/image/blackSugarManto2.png" alt="">
-                    <h2>黑糖饅頭</h2>
-                    <div class="price">NT$12</div>
-                    <button class="addCart">加入購物車</button>
-                </div>
-                <div class="item manto">
-                    <img src="/image/sandon2.png" alt="">
-                    <h2>山東饅頭</h2>
-                    <div class="price">NT$13</div>
-                    <button class="addCart">加入購物車</button>
-                </div>
-                <div class="item manto">
-                    <img src="/image/bsgManto2.png" alt="">
-                    <h2>黑糖全麥饅頭</h2>
-                    <div class="price">NT$22</div>
-                    <button class="addCart">加入購物車</button>
-                </div>
-                <div class="item manto">
-                    <img src="/image/gManto2.png" alt="">
-                    <h2>全麥饅頭</h2>
-                    <div class="price">NT$22</div>
-                    <button class="addCart">加入購物車</button>
-                </div>
-                <!-- 飲料 -->
-                <div class="item drink">
-                    <img src="/image/coffeeMilk2.png" alt="">
-                    <h2>咖啡牛奶</h2>
-                    <div class="price">NT$15</div>
-                    <button class="addCart">加入購物車</button>
-                </div>
-                <div class="item drink">
-                    <img src="/image/milkTea2.png" alt="">
-                    <h2>鮮奶茶</h2>
-                    <div class="price">NT$35</div>
-                    <button class="addCart">加入購物車</button>
-                </div>
-                <div class="item drink">
-                    <img src="/image/soyBeanMilk2.png" alt="">
-                    <h2>豆漿</h2>
-                    <div class="price">NT$15</div>
-                    <button class="addCart">加入購物車</button>
+                <div class="contactButton">
+                    <button onclick="showContact()" class="closeContact">關閉</button>
+                    <button class="submitContact">送出</button>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- 聯絡我們 -->
-    <div class="contact" id="contactBlock">
-        <div class="contactInfo">
-            <div class="contactTitle">
-                <h2>聯絡我們</h2>
-                <h4>contact us</h4>
+        <!-- 購物車 -->
+        <div class="cartTab">
+            <h1>購物車</h1>
+            <div class="listCart">
             </div>
-            <div class="contactContent">
-                若有任何需要服務的地方，請填寫以下表單表達您的意見，我們將收到您的來信後，儘速於3～5日內回覆（不含週六例假日）。
+            <div class="btnCart">
+                <button onclick="showCart()" class="close">關閉</button>
+                <button class="checkOut">結帳</button>
             </div>
-            <div class="input-group mb-3 px-2">
-                <span class="input-group-text" id="basic-addon1">*姓名</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                    aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-3 px-2">
-                <span class="input-group-text" id="basic-addon1">*連絡電話</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                    aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-3 px-2">
-                <span class="input-group-text" id="basic-addon1">*信箱</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                    aria-describedby="basic-addon1">
-            </div>
-            <div class="input-group mb-3 px-2">
-                <span class="input-group-text" id="basic-addon1">*意見</span>
-                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
-                    aria-describedby="basic-addon1">
-            </div>
-            <div class="contactButton">
-                <button onclick="showContact()" class="closeContact">關閉</button>
-                <button class="submitContact">送出</button>
-            </div>
-        </div>
-    </div>
-    <!-- 購物車 -->
-    <div class="cartTab">
-        <h1>購物車</h1>
-        <div class="listCart">
-        </div>
-        <div class="btnCart">
-            <button onclick="showCart()" class="close">關閉</button>
-            <button class="checkOut">結帳</button>
         </div>
     </div>
     <!-- footer -->
