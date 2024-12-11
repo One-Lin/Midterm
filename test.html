@@ -1,12 +1,50 @@
-<div class="myClass" id="item1">Item 1</div>
-<div class="myClass" id="item2">Item 2</div>
-<div class="myClass" id="item3">Item 3</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>按鈕控制顯示區塊</title>
+  <style>
+    .content {
+      display: none; /* 預設隱藏 */
+    }
+    .content.active {
+      display: block; /* 顯示 */
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- 按鈕 -->
+  <div>
+    <button onclick="showDiv('section1')">顯示區塊 1</button>
+    <button onclick="showDiv('section2')">顯示區塊 2</button>
+    <button onclick="showDiv('section3')">顯示區塊 3</button>
+  </div>
 
-<script>
-  const elements = document.querySelectorAll(".myClass");
-  elements.forEach(element => {
-    element.addEventListener("click", function () {
-      console.log(this.id); // 输出被点击元素的 id
-    });
-  });
-</script>
+  <!-- 區塊 -->
+  <div class="content section1">這是區塊 1</div>
+  <div class="content section2">這是區塊 2</div>
+  <div class="content section3">這是區塊 3</div>
+
+  <script>
+    // 顯示指定區塊
+    function showDiv(targetClass) {
+      // 隱藏所有區塊
+      document.querySelectorAll('.content').forEach(div => {
+        div.classList.remove('active');
+      });
+
+      // 顯示目標區塊
+      const targetDiv = document.querySelector(`.${targetClass}`);
+      if (targetDiv) {
+        targetDiv.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>
