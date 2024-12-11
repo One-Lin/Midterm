@@ -1,50 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>按鈕控制顯示區塊</title>
-  <style>
-    .content {
-      display: none; /* 預設隱藏 */
-    }
-    .content.active {
-      display: block; /* 顯示 */
-    }
-    button {
-      margin: 5px;
-      padding: 10px 15px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>購物車範例</title>
+    <style>
+        .product {
+            margin-bottom: 20px;
+        }
+        #cart {
+            margin-top: 30px;
+            border-top: 2px solid #ddd;
+            padding-top: 10px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .remove-btn {
+            color: red;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <!-- 按鈕 -->
-  <div>
-    <button onclick="showDiv('section1')">顯示區塊 1</button>
-    <button onclick="showDiv('section2')">顯示區塊 2</button>
-    <button onclick="showDiv('section3')">顯示區塊 3</button>
-  </div>
+    <div class="product" data-id="1" data-name="商品A" data-price="100">
+        <h3>商品A</h3>
+        <p>價格：$100</p>
+        <button class="add-to-cart">加入購物車</button>
+    </div>
+    <div class="product" data-id="2" data-name="商品B" data-price="200">
+        <h3>商品B</h3>
+        <p>價格：$200</p>
+        <button class="add-to-cart">加入購物車</button>
+    </div>
+    <h2>購物車</h2>
+    <div id="cart"></div>
+    <h3 id="total-price">總價: $0</h3>
+    <script>
+        // 初始化購物車，從 localStorage 中取得字串
+        let cartData = localStorage.getItem('cart') || ''; 
+        let cart = parseCartData(cartData);
 
-  <!-- 區塊 -->
-  <div class="content section1">這是區塊 1</div>
-  <div class="content section2">這是區塊 2</div>
-  <div class="content section3">這是區塊 3</div>
+        document.addEventListener('DOMContentLoaded', () => {
+            const buttons = document.querySelectorAll('.add-to-cart');
 
-  <script>
-    // 顯示指定區塊
-    function showDiv(targetClass) {
-      // 隱藏所有區塊
-      document.querySelectorAll('.content').forEach(div => {
-        div.classList.remove('active');
-      });
+            // 綁定「加入購物車」按鈕
+            buttons.forEach(button => {
+                button.addEventListener('click', event => {
+                    const product = event.target.closest('.product');
+                    const productId = product.dataset.id;
+                    const productName = product.dataset.name;
+                    const productPrice = parseFloat(product.dataset.price);
 
-      // 顯示目標區塊
-      const targetDiv = document.querySelector(`.${targetClass}`);
-      if (targetDiv) {
-        targetDiv.classList.add('active');
-      }
-    }
-  </script>
+                    addToCart(productId, productName, productPrice);
+                });
+            });
+
+            // 更新購物車畫面
+            updateCartUI();
+        });
+
+        function parseCartData(data) {
+            // 將存儲的字串轉為陣列格式
+            if (!data) return [];
+            return data.split(';').map(item => {
+                const [id, name, price, quantity] = item.split(',');
+                return { id, name, price: parseFloat(price), quantity: parseInt(quantity) };
+            });
+        }
+
+        function stringifyCartData(cart) {
+            // 將購物車資料轉為存儲的字串格式
+            return cart.map(item => `${item.id},${item.name},${item.price},${item.quantity}`).join(';');
+        }
+
+        function addToCart(id, name, price) {
+            // 檢查商品是否已存在於購物車中
+            const existingItem = cart.find(item => item.id === id);
+
+            if (existingItem) {
+                existingItem.quantity += 1; // 增加數量
+            } else {
+                cart.push({ id, name, price, quantity: 1 }); // 新增商品
+            }
+
+            saveCart();
+            updateCartUI();
+        }
+
+        function removeFromCart(id) {
+            // 移除購物車中的商品
+            cart = cart.filter(item => item.id !== id);
+            saveCart();
+            updateCartUI();
+        }
+
+        function saveCart() {
+            // 將購物車字串存入 localStorage
+            localStorage.setItem('cart', stringifyCartData(cart));
+        }
+
+        function updateCartUI() {
+            const cartContainer = document.getElementById('cart');
+            const totalPriceElement = document.getElementById('total-price');
+            cartContainer.innerHTML = ''; // 清空購物車 UI
+            let totalPrice = 0; // 初始化總價
+
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <span>${item.name} x ${item.quantity} - $${item.price * item.quantity}</span>
+                    <span class="remove-btn" data-id="${item.id}">移除</span>
+                `;
+                cartContainer.appendChild(cartItem);
+
+                // 確保數據是數字類型後計算
+                const itemPrice = parseFloat(item.price);
+                const itemQuantity = parseInt(item.quantity);
+                totalPrice += itemPrice * itemQuantity; // 累加每個商品的總價
+            });
+
+            totalPriceElement.textContent = `總價: $${totalPrice.toFixed(2)}`;
+
+            // 綁定「移除」按鈕
+            const removeButtons = document.querySelectorAll('.remove-btn');
+            removeButtons.forEach(button => {
+                button.addEventListener('click', event => {
+                    const id = event.target.dataset.id;
+                    removeFromCart(id);
+                });
+            });
+        }
+    </script>
 </body>
 </html>
