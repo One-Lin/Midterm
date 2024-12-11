@@ -12,7 +12,6 @@ nav li {
     font-size: x-large;
 }
 .cartIcon{ 
-    margin-top: 5px;
     position: absolute;
     right: 10px;
 }
@@ -21,9 +20,6 @@ nav li {
     color: white;
     background-color: transparent;
     font-size: x-large;
-}
-.contactLink{
-    margin-top: 8px;
 }
 .contactLink button{
     border: none;
@@ -56,7 +52,7 @@ nav li {
     transition: all 0.25s ease-out;
     transform-origin: 800px -200px;
     position: relative;
-    z-index: 1000;
+    z-index: 5;
 }
 /* 滑鼠移動放大倍率 */
 .priceImg img:hover{transform:scale(1.5,1.5);} /* 滑鼠移動放大 */
@@ -92,6 +88,17 @@ footer iframe {
     background-color: silver;
     color: black;
 }
+.container .product div button:hover{
+    font-weight: 600;
+    text-shadow: 1px 1px 1px white;
+    width: 90%;
+    font-size: 2.5em;
+    border: none;
+    border-radius: 30px;
+    background-color: silver;
+    color: black;
+    transition: .25s;
+}
 /* ---------------↑--------------- */
 
 /* ---------------商品css樣式--------------- */
@@ -110,10 +117,19 @@ footer iframe {
     letter-spacing: 2px;
     cursor: pointer;
 }
+.listProduct .total .item .addCart:hover{
+    border: none;
+    background-color: #2f2b2b;
+    color: #ffffff;
+    font-size: 1.3em;
+    border-radius: 20px;
+    letter-spacing: 2px;
+    transition: .25s;
+}
 .listProduct .total .item{
     /* display: flex;
     flex-direction: column; */
-    width: 23%;
+    width: 22%;
     letter-spacing: 3px;
     padding: 10px;
     border-radius: 15px;
@@ -121,8 +137,8 @@ footer iframe {
     text-align: center;
     background-color: #f5ece0;
 }
+
 .listProduct .total .item img {
-    flex-grow: 1;
     margin-top: 10px;
     border-radius: 30px;
     width: 90%;
@@ -133,6 +149,7 @@ footer iframe {
     flex-wrap: wrap;
     gap: 30px ;
     margin: 25px;
+    padding-left: 2%;
 }
 /* ---------------↑--------------- */
 
@@ -194,9 +211,22 @@ footer iframe {
     font-weight: 500;
     cursor: pointer;
 }
+.cartTab .btnCart button:hover{
+    color:black;
+    background-color:  #f5ece0;
+    border: none;
+    font-size: 1.8em;
+    transition: .25s;
+}
 .cartTab .btnCart .close{
     background-color:rgb(0, 0, 0);
     color: white;
+}
+.cartTab .btnCart .close:hover{
+    background-color:rgb(20, 19, 19);
+    color: white;
+    font-size: 1.8em;
+    transition: .25s;
 }
 /* ---------------↑--------------- */
 
@@ -237,6 +267,7 @@ footer iframe {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 10;
 }
 .contactTitle{
     padding-top: 10px;
@@ -255,7 +286,7 @@ footer iframe {
 }
 .contactButton{
     position: relative;
-    bottom: -120px;
+    bottom: -100px;
     text-align: center;
     display: grid;
     grid-template-columns: repeat(2,1fr)
@@ -267,6 +298,14 @@ footer iframe {
     background-color: transparent;
     text-shadow: 2px 2px 2px black;
 }
+.contactButton button:hover{
+    font-size: 2.0em;
+    border: none;
+    color: white;
+    background-color: transparent;
+    text-shadow: 2px 2px 2px black;
+    transition: .25s;
+}
 /* ---------------↑--------------- */
 
 /* 分類切換 */
@@ -275,4 +314,13 @@ footer iframe {
 }
 .hideProduct{
     display: none;
+}
+/* ---------------↑--------------- */
+
+.container-fluid ul li:hover{
+    border-radius: 20px;
+    background-color: rgb(61, 12, 1);
+    color: beige;
+    font-size: 1.8em;
+    transition: 0.1s;
 }
