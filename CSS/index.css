@@ -1,0 +1,41 @@
+/* ---------------首頁intro圖片css--------------- */
+#introImg{
+    border-radius: 30px;
+    position: relative;
+    left: 20%;
+}
+.card-text{
+    font-size: xx-large;
+    color: white;
+    text-shadow: 3px 3px 3px black;
+}
+.btn{
+    font-size: larger;
+    border-radius: 10px;
+    background-color: #010101;
+    color: white;
+}
+/* 滑鼠移動放大位置 */
+.priceImg img{
+    transform:scale(1,1);
+    transition: all 0.25s ease-out;
+    transform-origin: 800px -200px;
+    position: relative;
+    z-index: 5;
+}
+/* 滑鼠移動放大倍率 */
+.priceImg img:hover{transform:scale(1.5,1.5);} /* 滑鼠移動放大 */
+/* ---------------↑--------------- */
+
+/* ---------------首頁iframe css樣式--------------- */
+#video{
+    margin-bottom: 50px;
+}
+#video iframe{
+    border: none;
+    border-radius: 30px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -0%);
+}
+/* ---------------↑--------------- */
