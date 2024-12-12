@@ -10,7 +10,6 @@
 
 .introduce1 {
     width: 40%;
-    background-color: rgb(185, 184, 184);
 }
 
 .row {
@@ -18,6 +17,7 @@
 }
 .introduceTitle{
     text-align: center;
+    text-shadow: 0 0 20px white ;
 }
 .introduceText{
     font-weight: 400;

@@ -1,140 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>購物車範例</title>
     <style>
-        .product {
-            margin-bottom: 20px;
+        .btn,
+        .btn:focus {
+            position: relative;
+            min-width: 200px;
+            background-color: black;
+            border-radius: 4em;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition-duration: 0.4s;
+            padding: 10px 20px;
         }
-        #cart {
-            margin-top: 30px;
-            border-top: 2px solid #ddd;
-            padding-top: 10px;
+
+        .btn:hover {
+            background-color: #3A3A3A;
+            color: white;
+            transition-duration: 0.1s;
         }
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
+
+        .btn:after {
+            content: "";
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.25s;
+            box-shadow: 0 0 10px 40px white;
+            border-radius: 4em;
         }
-        .remove-btn {
-            color: red;
-            cursor: pointer;
+
+        .btn:active:after {
+            opacity: 1;
+            transition: 0s;
+            box-shadow: 0 0 0 0px white;
+        }
+
+        .btn:active {
+            top: 1px;
         }
     </style>
 </head>
-<body>
-    <div class="product" data-id="1" data-name="商品A" data-price="100">
-        <h3>商品A</h3>
-        <p>價格：$100</p>
-        <button class="add-to-cart">加入購物車</button>
-    </div>
-    <div class="product" data-id="2" data-name="商品B" data-price="200">
-        <h3>商品B</h3>
-        <p>價格：$200</p>
-        <button class="add-to-cart">加入購物車</button>
-    </div>
-    <h2>購物車</h2>
-    <div id="cart"></div>
-    <h3 id="total-price">總價: $0</h3>
-    <script>
-        // 初始化購物車，從 localStorage 中取得字串
-        let cartData = localStorage.getItem('cart') || ''; 
-        let cart = parseCartData(cartData);
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const buttons = document.querySelectorAll('.add-to-cart');
-
-            // 綁定「加入購物車」按鈕
-            buttons.forEach(button => {
-                button.addEventListener('click', event => {
-                    const product = event.target.closest('.product');
-                    const productId = product.dataset.id;
-                    const productName = product.dataset.name;
-                    const productPrice = parseFloat(product.dataset.price);
-
-                    addToCart(productId, productName, productPrice);
-                });
-            });
-
-            // 更新購物車畫面
-            updateCartUI();
-        });
-
-        function parseCartData(data) {
-            // 將存儲的字串轉為陣列格式
-            if (!data) return [];
-            return data.split(';').map(item => {
-                const [id, name, price, quantity] = item.split(',');
-                return { id, name, price: parseFloat(price), quantity: parseInt(quantity) };
-            });
-        }
-
-        function stringifyCartData(cart) {
-            // 將購物車資料轉為存儲的字串格式
-            return cart.map(item => `${item.id},${item.name},${item.price},${item.quantity}`).join(';');
-        }
-
-        function addToCart(id, name, price) {
-            // 檢查商品是否已存在於購物車中
-            const existingItem = cart.find(item => item.id === id);
-
-            if (existingItem) {
-                existingItem.quantity += 1; // 增加數量
-            } else {
-                cart.push({ id, name, price, quantity: 1 }); // 新增商品
-            }
-
-            saveCart();
-            updateCartUI();
-        }
-
-        function removeFromCart(id) {
-            // 移除購物車中的商品
-            cart = cart.filter(item => item.id !== id);
-            saveCart();
-            updateCartUI();
-        }
-
-        function saveCart() {
-            // 將購物車字串存入 localStorage
-            localStorage.setItem('cart', stringifyCartData(cart));
-        }
-
-        function updateCartUI() {
-            const cartContainer = document.getElementById('cart');
-            const totalPriceElement = document.getElementById('total-price');
-            cartContainer.innerHTML = ''; // 清空購物車 UI
-            let totalPrice = 0; // 初始化總價
-
-            cart.forEach(item => {
-                const cartItem = document.createElement('div');
-                cartItem.classList.add('cart-item');
-                cartItem.innerHTML = `
-                    <span>${item.name} x ${item.quantity} - $${item.price * item.quantity}</span>
-                    <span class="remove-btn" data-id="${item.id}">移除</span>
-                `;
-                cartContainer.appendChild(cartItem);
-
-                // 確保數據是數字類型後計算
-                const itemPrice = parseFloat(item.price);
-                const itemQuantity = parseInt(item.quantity);
-                totalPrice += itemPrice * itemQuantity; // 累加每個商品的總價
-            });
-
-            totalPriceElement.textContent = `總價: $${totalPrice.toFixed(2)}`;
-
-            // 綁定「移除」按鈕
-            const removeButtons = document.querySelectorAll('.remove-btn');
-            removeButtons.forEach(button => {
-                button.addEventListener('click', event => {
-                    const id = event.target.dataset.id;
-                    removeFromCart(id);
-                });
-            });
-        }
-    </script>
+<body style="background-color: #3A3A3A;">
+    <a href="javascript: void(0)" class="btn"style="margin: top 200px; ;">
+        Button
+    </a><p/>
+    <a href="javascript: void(0)" class="btn"style="margin: top 200px; ;">
+        Button
+    </a><a href="javascript: void(0)" class="btn"style="margin: top 200px; ;">
+        Button
+    </a>
+    <a href="javascript: void(0)" class="btn"style="margin: top 200px; ;">
+        Button
+    </a>
 </body>
+
 </html>

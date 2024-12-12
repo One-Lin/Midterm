@@ -189,6 +189,7 @@ footer iframe {
 
 /* ---------------聯絡我們--------------- */
 .contact {
+    border: 2px solid;
     text-shadow: 2px 2px 2px black;
     border-radius: 30px;
     width: 500PX;
@@ -213,7 +214,7 @@ footer iframe {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.8);
     /* 使用透明的白色遮罩 */
     z-index: 10;
 }
@@ -264,6 +265,9 @@ footer iframe {
     color: white;
     background-color: transparent;
     text-shadow: 2px 2px 2px black;
+}
+.contactButton button:active {
+    transform: scale(0.9);
 }
 
 .contactButton button:hover {
