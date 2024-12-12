@@ -1,7 +1,7 @@
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
 function addItem(name, price, image) {
-    const existingItem = cart.find(item => item.name === name);
+    const existingItem = cart.find(item => item.name == name);
     if (existingItem) {
         existingItem.quantity += 1;
     } else {
@@ -9,6 +9,7 @@ function addItem(name, price, image) {
     }
     updateLocalStorage();
     displayCart();
+    alert('已加入購物車');
 }
 
 function deleteItem(index) {
