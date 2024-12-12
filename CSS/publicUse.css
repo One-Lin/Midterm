@@ -1,4 +1,4 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
 html {
     height: 100%;
@@ -7,7 +7,7 @@ html {
 
 body {
     font-family: 'Noto Sans TC', sans-serif !important;
-    background-image: url("/bg2.jpg");
+    background-image: url("../bg2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -223,7 +223,7 @@ footer iframe {
     border-radius: 30px;
     width: 500PX;
     height: 600px;
-    background-image: url("/image/bg3.jpg");
+    background-image: url("../image/bg3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
