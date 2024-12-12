@@ -25,7 +25,9 @@ nav li {
     margin: 0 15px;
     font-size: x-large;
 }
-
+.navbar-brand img{
+    filter: brightness(1.8) contrast(1.3); /* 增加亮度和對比度 */
+}
 .cartIcon {
     position: absolute;
     right: 10px;
