@@ -101,7 +101,7 @@
         </div>
     </div>
     <!-- 聯絡我們 -->
-    <div class="contact" id="contactBlock">
+    <form class="contact" id="contactBlock">
         <div class="contactInfo">
             <div class="contactTitle">
                 <h2>聯絡我們</h2>
@@ -111,30 +111,30 @@
             </div>
             <div class="input-group mb-3 px-2">
                 <span class="input-group-text" id="basic-addon1">*姓名</span>
-                <input type="text" class="form-control" placeholder="請輸入姓名" aria-label="Username"
-                    aria-describedby="basic-addon1">
+                <input type="text" class="form-control" id="Username" placeholder="請輸入姓名" aria-label="Username"
+                    aria-describedby="basic-addon1" required>
             </div>
             <div class="input-group mb-3 px-2">
-                <span class="input-group-text" id="basic-addon1">*連絡電話</span>
-                <input type="text" class="form-control" placeholder="請輸入電話" aria-label="Username"
-                    aria-describedby="basic-addon1">
+                <span class="input-group-text" id="basic-addon2">*連絡電話</span>
+                <input type="text" class="form-control" id="Phone" placeholder="請輸入電話" aria-label="Phone"
+                    aria-describedby="basic-addon1" required>
             </div>
             <div class="input-group mb-3 px-2">
-                <span class="input-group-text" id="basic-addon1">*信箱</span>
-                <input type="text" class="form-control" placeholder="請輸入信箱" aria-label="Username"
-                    aria-describedby="basic-addon1">
+                <span class="input-group-text" id="basic-addon3">*信箱</span>
+                <input type="text" class="form-control" id="Email" placeholder="請輸入信箱" aria-label="Email"
+                    aria-describedby="basic-addon1" required>
             </div>
             <div class="input-group mb-3 px-2">
-                <span class="input-group-text" id="basic-addon1">*意見</span>
-                <input type="text" class="form-control" placeholder="請留下您寶貴的意見" aria-label="Username"
-                    aria-describedby="basic-addon1">
+                <span class="input-group-text" id="basic-addon4">*意見</span>
+                <input type="text" class="form-control" id="opinion" placeholder="請留下您寶貴的意見" aria-label="opinion"
+                    aria-describedby="basic-addon1" required>
             </div>
             <div class="contactButton">
                 <button onclick="showContact()" class="closeContact">關閉</button>
-                <button class="submitContact">送出</button>
+                <button onclick="submitContact()" class="submitContact">送出</button>
             </div>
         </div>
-    </div>
+    </form>
     <!-- 購物車 -->
     <div class="cartTab">
         <h1>購物車</h1>
